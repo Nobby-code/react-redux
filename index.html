@@ -6,7 +6,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <title>Document</title>
+    <title>react and redux tutorial</title>
 </head>
 <body>
     <div id="app"></div>
@@ -17,11 +17,27 @@
                 name: 'Norbert',
                 age: 40
             }
+
+            handleClick(e) {
+                console.log(e.target); 
+            }
+
+            handleMouseOver(e) {
+                console.log(e.target, e.pageX)
+            }
+
+            handleCopy(e) {
+                console.log('Do not copy me. Be original')
+            }
+
             render() {
                 return (
                     <div className="app-content">
-                        <h1>Hey, Norbert</h1>
+                        <h1>Hey, people</h1>
                         <p>My name is: { this.state.name } and I am { this.state.age }</p>
+                        <button onClick={this.handleClick}>Click me</button>
+                        <button onMouseOver={this.handleMouseOver}>Hover me</button>
+                        <p onCopy={this.handleCopy}>What we think, we become</p>
                     </div>
                 )
             }
